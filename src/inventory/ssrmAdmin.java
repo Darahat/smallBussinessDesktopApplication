@@ -80,13 +80,10 @@ public class ssrmAdmin extends JFrame {
 	 {
 		 
 		 try{
-			 String myConnectionString =
-				        "jdbc:mysql://localhost:3307?" +
-				        "useUnicode=yes&characterEncoding=UTF-8";
-			 Connection dbConnection = DriverManager.getConnection(myConnectionString, "root", "");
-				Object item = comboBoxmonth.getSelectedItem();
-				//	String value = ((JComboBox)item).;
-					String query = null;
+	     	 	connectoin=Main.dbConnector();
+					Object item = comboBoxmonth.getSelectedItem();
+					//	String value = ((JComboBox)item).;
+						String query = null;
 				 
 					if (item=="January")
 					{
@@ -163,7 +160,7 @@ public class ssrmAdmin extends JFrame {
 	public ssrmAdmin() {
 	 
 		try {
-			con=Maintemp.dbConnector();
+			con=Main.dbConnector();
 		} catch (Exception e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
