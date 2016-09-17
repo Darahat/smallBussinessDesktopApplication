@@ -1,1 +1,1 @@
-# small Bussiness Desktop Application By Java
+# Small Bussiness Desktop Application
