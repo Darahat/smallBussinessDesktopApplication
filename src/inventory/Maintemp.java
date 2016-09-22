@@ -3,6 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 
  
@@ -17,8 +18,8 @@ public class Maintemp {
 	    
 	 
 	    try {
-		      Class.forName("com.mysql.jdbc.Driver").newInstance();
-		      String url = "jdbc:mysql://localhost:3306";
+		      Class.forName("com.apache.derby.jdbc.ClientDriver").newInstance();
+		      String url = "jdbc:derby://localhost:1527/teastall;create=true";
 		      connection = DriverManager.getConnection(url, "root", "");
 		      JOptionPane.showMessageDialog(null,"Successfull");
 	 
