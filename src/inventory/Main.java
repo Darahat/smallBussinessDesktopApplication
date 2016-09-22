@@ -14,9 +14,10 @@ public class Main {
 	{
 		try{
 		
-		Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+			Class.forName("org.sqlite.JDBC");
 
-		Connection conn=DriverManager.getConnection("jdbc:derby:teastall;create=true");
+		Connection conn=DriverManager.getConnection("jdbc:sqlite:C:/Users/Didarul Alam Rahat/workspace1/inventory/teastall.sqlite");
+		//JOptionPane.showMessageDialog(null,"connected to database");
 		return conn;
 		}
 		catch(Exception e){

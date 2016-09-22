@@ -80,7 +80,8 @@ public class ssrmAdmin extends JFrame {
 	 {
 		 
 		 try{
-	     	 	connectoin=Main.dbConnector();
+	     	 
+			 connectoin=Main.dbConnector();
 					Object item = comboBoxmonth.getSelectedItem();
 					//	String value = ((JComboBox)item).;
 						String query = null;
@@ -528,7 +529,7 @@ public class ssrmAdmin extends JFrame {
  
 		re_new_d.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			String query="DROP DATABASE teastall";
+			String query="Delete DATABASE teastall";
 				try {
 					PreparedStatement pst=con.prepareStatement(query);
 					 int reply = JOptionPane.showConfirmDialog(null, "Are You Sure to Delete all data of your database?", "Destroy Database", JOptionPane.YES_NO_OPTION);

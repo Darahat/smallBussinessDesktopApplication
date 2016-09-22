@@ -12,22 +12,18 @@ public class Maintemp {
   // Connection connection=null;
    public static Connection dbConnector()
    {
- 
-	   Connection connection = null;
-	    java.sql.Statement statement = null;
 	    
 	 
 	    try {
-		      Class.forName("com.apache.derby.jdbc.ClientDriver").newInstance();
-		      String url = "jdbc:derby://localhost:1527/teastall;create=true";
-		      connection = DriverManager.getConnection(url, "root", "");
+		      Class.forName("org.sqlite.JDBC");
+		     Connection conn=DriverManager.getConnection("jdbc:sqlite:C:/Users/Didarul Alam Rahat/workspace1/inventory/teastall.sqlite");
+		    //  connection = DriverManager.getConnection(url, "root", "");
 		      JOptionPane.showMessageDialog(null,"Successfull");
-	 
+	 return conn;
 	   } catch (Exception e) {
-		    	JOptionPane.showMessageDialog(null,"Sorry Can't Connect to database");
+	//	    	JOptionPane.showMessageDialog(null,"Sorry Can't Connect to database");
 		      e.printStackTrace();
-		    }
-	return connection;
-  
-   }
-}
+	    return null;
+	   }
+	
+}}
