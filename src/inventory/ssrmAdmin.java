@@ -559,7 +559,7 @@ public class ssrmAdmin extends JFrame {
 			 String query="CREATE DATABASE teastall";
 
  			 String[] query2={
- 			 "CREATE TABLE january(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
+ 			 "CREATE TABLE january(date INT DUPLICATE(1,1) PRIMARY KEY,sell INT NOT NULL)",
 			 "CREATE TABLE february(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE march(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE april(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
@@ -568,7 +568,7 @@ public class ssrmAdmin extends JFrame {
 			 "CREATE TABLE july(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE august(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE september(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
-			 "CREATE TABLE octobar(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",			 				 
+			 "CREATE TABLE october(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",			 				 
 			 "CREATE TABLE novebmer(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE december(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 		     "CREATE TABLE login(Username VARCHAR(50) NOT NULL ,Password VARCHAR(50) NOT NULL,PRIMARY KEY (Username))",

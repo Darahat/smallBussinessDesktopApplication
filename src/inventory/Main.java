@@ -17,7 +17,8 @@ public class Main {
 			Class.forName("org.sqlite.JDBC");
 
 		Connection conn=DriverManager.getConnection("jdbc:sqlite:C:/Users/Didarul Alam Rahat/workspace1/inventory/teastall.sqlite");
-		//JOptionPane.showMessageDialog(null,"connected to database");
+	//	Connection conn=DriverManager.getConnection("jdbc:sqlite:teastall.sqlite"); 
+	//	JOptionPane.showMessageDialog(null,"connected to database");
 		return conn;
 		}
 		catch(Exception e){

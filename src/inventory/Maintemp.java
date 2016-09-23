@@ -16,9 +16,9 @@ public class Maintemp {
 	 
 	    try {
 		      Class.forName("org.sqlite.JDBC");
-		     Connection conn=DriverManager.getConnection("jdbc:sqlite:C:/Users/Didarul Alam Rahat/workspace1/inventory/teastall.sqlite");
+		     Connection conn=DriverManager.getConnection("jdbc:sqlite:resource/teastall.sqlite");
 		    //  connection = DriverManager.getConnection(url, "root", "");
-		      JOptionPane.showMessageDialog(null,"Successfull");
+		   //   JOptionPane.showMessageDialog(null,"Successfull");
 	 return conn;
 	   } catch (Exception e) {
 	//	    	JOptionPane.showMessageDialog(null,"Sorry Can't Connect to database");
