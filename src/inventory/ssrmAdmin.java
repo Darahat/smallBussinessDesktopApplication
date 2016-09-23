@@ -80,7 +80,8 @@ public class ssrmAdmin extends JFrame {
 	 {
 		 
 		 try{
-	     	 	connectoin=Main.dbConnector();
+	     	 
+			 connectoin=Main.dbConnector();
 					Object item = comboBoxmonth.getSelectedItem();
 					//	String value = ((JComboBox)item).;
 						String query = null;
@@ -528,7 +529,7 @@ public class ssrmAdmin extends JFrame {
  
 		re_new_d.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			String query="DROP DATABASE teastall";
+			String query="Delete DATABASE teastall";
 				try {
 					PreparedStatement pst=con.prepareStatement(query);
 					 int reply = JOptionPane.showConfirmDialog(null, "Are You Sure to Delete all data of your database?", "Destroy Database", JOptionPane.YES_NO_OPTION);
@@ -536,7 +537,6 @@ public class ssrmAdmin extends JFrame {
 					    if (reply == JOptionPane.YES_OPTION) {
 				             	 
 				    pst.executeUpdate();
-				             	 
 				             	 }
 					    else{
 					    	  JOptionPane.showMessageDialog(null, "Contact About your problem with developer");
@@ -556,10 +556,10 @@ public class ssrmAdmin extends JFrame {
 		 
 		CreateDb.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			 String query="Create Database teastall";
+			 String query="CREATE DATABASE teastall";
 
  			 String[] query2={
- 			 "CREATE TABLE january(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
+ 			 "CREATE TABLE january(date INT DUPLICATE(1,1) PRIMARY KEY,sell INT NOT NULL)",
 			 "CREATE TABLE february(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE march(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE april(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
@@ -568,7 +568,7 @@ public class ssrmAdmin extends JFrame {
 			 "CREATE TABLE july(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE august(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE september(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
-			 "CREATE TABLE octobar(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",			 				 
+			 "CREATE TABLE october(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",			 				 
 			 "CREATE TABLE novebmer(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 			 "CREATE TABLE december(date INT(3) unsigned NOT NULL auto_increment,sell INT(10) NOT NULL,PRIMARY KEY (date))",
 		     "CREATE TABLE login(Username VARCHAR(50) NOT NULL ,Password VARCHAR(50) NOT NULL,PRIMARY KEY (Username))",
@@ -604,7 +604,8 @@ public class ssrmAdmin extends JFrame {
 			     		    }
 			     	    }
 			     		    catch (Exception e) {
-			     		    	JOptionPane.showMessageDialog(null,"Your Database Is Already Exist Or Can't Connect to database");
+			     		    	JOptionPane.showMessageDialog(null, e);
+			     		    	//JOptionPane.showMessageDialog(null,"Your Database Is Already Exist Or Can't Connect to database");
 			     		   
 								
 			     		    	e.printStackTrace();
